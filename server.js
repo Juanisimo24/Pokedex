@@ -39,6 +39,29 @@ app.get('/pokemon/:url', async (req,res)=>{
     res.render('index',{Pokedex:response.data.results,next:response.data.next});
 });
 
+// Endpoint para buscar un Pokémon por nombre
+app.get('/search/:name', async (req, res) => {
+    const { name } = req.params;
+    try {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
+        // Enviar solo la información del Pokémon encontrado
+        const pokemon = {
+            name: response.data.name,
+            image: response.data.sprites.front_default,
+            types: response.data.types.map(type => type.type.name),
+            experience: response.data.base_experience,
+            weight: response.data.weight,
+            height: response.data.height,
+            moves: response.data.moves.map(move => move.move.name).slice(0, 5), // Mostrar los primeros 5 movimientos
+            abilities: response.data.abilities.map(ability => ability.ability.name)
+        };
+        res.render('index', { pokemon });
+    } catch (error) {
+        console.error(error);
+        res.render('error', { message: `No se encontró el Pokémon con el nombre "${name}".` });
+    }
+});
+
 // Servidor escuchando en el puerto definido
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
