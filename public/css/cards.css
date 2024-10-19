@@ -1,7 +1,11 @@
 body {
-    background-color: #333;
     color: white;
     font-family: Arial, sans-serif;
+    background-image: url('/images/pxfuel.jpg'); /* Ruta a tu imagen */
+    background-size: cover; /* La imagen cubrirá toda la pantalla */
+    background-position: center; /* Centrar la imagen */
+    background-attachment: fixed; /* La imagen se mantendrá fija al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
   }
   
   .pokedex-header {
