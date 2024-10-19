@@ -1,8 +1,148 @@
-/*Must add the other badges colors*/
+body {
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pokedex-header {
+    background-color: #ff6f61;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .pokemon-image-container {
+    background-color: #ffa756; /*Color depends on the pokemon type maybe..?*/
+    border-radius: 30px;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 20px;
+  }
+
+  .pokemon-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pokemon-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .pokedex-button {
+  background-color: #ff6f61; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Esquinas redondeadas */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+  .type-badges {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .type-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    margin: 0 5px;
+    font-size: 14px;
+  }
+
+  .details {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .bg-purple {
+    background-color: #6f42c1; 
+  }
+  
+  .progress-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
 .type-badge-flying { 
     background-color: #98d8d8;
 }
 
 .type-badge-fire {
+    background-color: #da120b;
+}
+
+.type-badge-normal {
+    background-color: #8b8a8a;
+}
+
+.type-badge-fighting {
     background-color: #f08030;
+}
+
+.type-badge-poison {
+    background-color: #6a0a7d;
+}
+
+.type-badge-ground {
+    background-color: #5b371e;
+}
+
+.type-badge-rock {
+    background-color: #b6c8aa;
+}
+
+.type-badge-bug {
+    background-color: #88b947;
+}
+
+.type-badge-ghost {
+    background-color: #2e0838;
+}
+
+.type-badge-steel {
+    background-color: #2b7b9d;
+}
+
+.type-badge-stellar {
+    background-color: #0e7871;
+}
+
+.type-badge-water {
+    background-color: #4f78fe;
+}
+
+.type-badge-grass {
+    background-color: #0b6f09;
+}
+
+.type-badge-electric {
+    background-color: #e4eb0b;
+}
+
+.type-badge-psychic {
+    background-color: #f03086;
+}
+
+.type-badge-ice {
+    background-color: #4eccfa;
+}
+
+.type-badge-dragon {
+    background-color: #4030f0;
+}
+
+.type-badge-dark {
+    background-color: #2d1708;
+}
+
+.type-badge-fairy {
+    background-color: #eb76d5;
 }

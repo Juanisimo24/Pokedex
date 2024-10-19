@@ -12,6 +12,14 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
+    const _retfile = path.join(__dirname, 'Pokedex.html');
+
+    res.sendFile(_retfile);
+});
+
+app.get("/cards", (req, res) => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
     const _retfile = path.join(__dirname, 'PokemonCards.html');
 
     res.sendFile(_retfile);

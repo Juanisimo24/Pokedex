@@ -26,13 +26,13 @@ function loadPokemon(image, name, types, experience, weight, height, moves, abil
     </div>
 
     <div class="details">
-        ${weight}
-        ${height}
+        ${weight} &nbsp &nbsp ${height}
+        <br> Weight &nbsp &nbsp Height 
       <!-- This is where you can add further details later -->
     </div>
 
     <!-- Progress bars-->
-    <h3><center> Base Stats </center></h3>
+    <br> <h3><center> Base Stats </center></h3>
 
     <div class="container mt-5">
       <!-- Red Progress Bar -->

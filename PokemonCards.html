@@ -8,79 +8,14 @@
     <link rel="stylesheet" type="text/css" href="css/cards.css" />
     <script src="js/cards.js"></script>
     <title>PokemonCards</title>
-    <style>
-      body {
-      background-color: #333;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    
-    .pokedex-header {
-      background-color: #ff6f61;
-      padding: 10px;
-      color: white;
-      font-size: 20px;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-    }
-
-
-    .pokemon-image-container {
-      background-color: #ffa756; /*Color depends on the pokemon type maybe..?*/
-      border-radius: 30px;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 20px;
-    }
-
-    .pokemon-image {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .pokemon-name {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
-    .type-badges {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .type-badge {
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 20px;
-      color: white;
-      margin: 0 5px;
-      font-size: 14px;
-    }
-
-    .details {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 18px;
-    }
-
-    .bg-purple {
-      background-color: #6f42c1; 
-    }
-    
-    .progress-label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    </style>
    
 </head>
 <body onload="loadPokemon('images/favicon.ico', 'Charizard', ['fire', 'flying'], [90, 75, 50, 20, 85], '75Kg', '1.20m', [], [])">
 
   <div class="pokedex-header">
-    <span>Pokedex</span> <!--Has to be responsive. Must bring back to homepage -->
+    <a href="/"> <!-- Cambia "another-page.html" al destino deseado -->
+      <button class="pokedex-button">Pokedex</button>
+    </a>
   </div>
 
   <div id="pokemon-info"></div>
