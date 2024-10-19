@@ -1,4 +1,13 @@
 
+    body {
+    background-image: url('/images/pxfuel.jpg'); /* Ruta a tu imagen */
+    background-size: cover; /* La imagen cubrirá toda la pantalla */
+    background-position: center; /* Centrar la imagen */
+    background-attachment: fixed; /* La imagen se mantendrá fija al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    }
+    
+    
     .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -43,3 +52,42 @@
     width: 20px;
     height: 20px; 
     }
+
+    .btn-purple {
+        background-color: #6f42c1; /* Color morado */
+        border: none;
+      }
+
+    .btn-purple:hover {
+        background-color: #5a359d; /* Morado más oscuro al pasar el mouse */
+      }
+
+      
+      /* Campo de búsqueda morado */
+      .search-input {
+        background-color: #6f42c1; /* Fondo morado */
+        color: white; /* Texto blanco */
+        border: none; /* Sin borde */
+      }
+  
+      .search-input::placeholder {
+        color: #e0d4f1; /* Placeholder en morado claro */
+      }
+  
+      .search-input:focus {
+        box-shadow: none; /* Sin sombra al hacer foco */
+        border: 2px solid #5a359d; /* Borde morado al hacer foco */
+      }
+
+      .poke-card {
+        background-color: #121212;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: white;
+      }
+  
+      .poke-card img {
+        max-width: 100%;
+        height: auto;
+      }

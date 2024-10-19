@@ -65,9 +65,13 @@ body {
   }
 
   .details {
+    display:flex;
+    flex-direction: column;
+    background-color: #5a359d;
     text-align: center;
     margin-top: 10px;
     font-size: 18px;
+    padding: 10px;
   }
 
   .bg-purple {
@@ -154,3 +158,36 @@ body {
 .type-badge-fairy {
     background-color: #eb76d5;
 }
+
+.btn-purple {
+  background-color: #6f42c1; /* Color morado */
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #5a359d; /* Morado más oscuro al pasar el mouse */
+}
+  /* Campo de búsqueda morado */
+  .search-input {
+    background-color: #6f42c1; /* Fondo morado */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+  }
+
+  .search-input::placeholder {
+    color: #e0d4f1; /* Placeholder en morado claro */
+  }
+
+  .search-input:focus {
+    box-shadow: none; /* Sin sombra al hacer foco */
+    border: 2px solid #5a359d; /* Borde morado al hacer foco */
+  }
+
+  .amonos{
+    background-color: #6f42c1;
+    color: white;
+    display:flex;
+    flex-direction: column;
+    margin : 5px;
+  }
+  

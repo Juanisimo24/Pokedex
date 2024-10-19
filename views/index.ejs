@@ -6,13 +6,17 @@
     <link rel="stylesheet"  href="./css/pokedex.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/pokedex.css" />
     <title>Pokedex</title>
     <script src="./JavaScript/home.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <h2> Pokedex </h2>
+      <!-- Logo a la izquierda -->
+      <a href="/">
+        <img src="images/icon1.png" alt="Pokedex Logo" style="width: 70px; height: 65px;">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,28 +24,33 @@
         <ul class="navbar-nav ms-auto">
           <form class="d-flex"  action="/searcha" method = "GET">
             <input class="form-control me-2" type="text" placeholder="Name of Pokemon" name="name">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-purple text-white" type="submit">Search</button>
           </form>
         </ul>
       </div>
     </div>
   </nav>
 
-    <% pokedex.Pokedex.forEach(function(Pokemones,index){ %>
-   <!-- Progress bars-->
-    <div class = "poke-card">
-      <a href="/search/<%= Pokemones.name %>" >
-        <h3><center> <%=Pokemones.name.charAt(0).toUpperCase() + Pokemones.name.slice(1)%> </center></h3>
-        <div class="container mt-5">
-        <img src="<%= images[index]  %>"/>
-      </a>
-      
+  <div class="container mt-4">
+    <div class="row">
+      <% pokedex.Pokedex.forEach(function(Pokemones, index){ %>
+        <div class="col-md-3">
+          <div class="poke-card text-center">
+            <a href="/search/<%= Pokemones.name %>">
+              <h3><%= Pokemones.name.charAt(0).toUpperCase() + Pokemones.name.slice(1) %></h3>
+              <img src="<%= images[index] %>" class="img-fluid" alt="<%= Pokemones.name %>">
+            </a>
+          </div>
+        </div>
+      <% }) %>
     </div>
+  </div>
 
+ <!-- Botones centrados y con el estilo morado -->
+ <div class="text-center mt-4">
+  <button onclick='recargar("<%= pokedex.prev %>")' type="button" class="btn btn-purple text-white mx-2">Previous</button>
+  <button onclick='recargar("<%= pokedex.next %>")' type="button" class="btn btn-purple text-white mx-2">Next</button>
 </div>
-     <%}) %>
-     <button onclick = 'recargar("<%=pokedex.prev%>")' type="button" class="btn btn-info">Previous</button>
-     <button onclick = 'recargar("<%=pokedex.next%>")' type="button" class="btn btn-info">Next</button>
 
 </body>
 </html>
