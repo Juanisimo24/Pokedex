@@ -1,16 +1,17 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
+const ejs = require('ejs');
+const path = require('path');
+const bodyParser = require('body-parser');
 app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3000;
-
-let currentPokemonId = 1; // Empezamos en el Pokémon con ID 1
-
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // Set views directory
+app.use(bodyParser.urlencoded({ extended: true })); // Parse form data from search
 
-// Definir la carpeta donde estarán las vistas
-app.set('views','./views');
+const PORT = process.env.PORT || 3000;
+let currentPokemonId = 1; // Empezamos en el Pokémon con ID 1
 
 //endpoint  para obtener el siguiente Pokémon
 app.get('/', async (req, res) => {
@@ -26,10 +27,10 @@ app.get('/', async (req, res) => {
 });
 
 //endpoint devuelve los siguientes 20 pokemons
-app.get('/pokemon/:url', async (req,res)=>{
-    const {url} = req.params;
-    var response;
+app.get('/pokemon/:url2', async (req,res)=>{
+    const {url2} = req.params;
     try{
+    url =url2;
         response = await axios.get(url);
         console.log("res:",response);
     } catch(error){
