@@ -5,7 +5,10 @@ body {
   }
   
   .pokedex-header {
-    background-color: #ff6f61;
+    display : flex;
+    align-content: center;
+    justify-content: center;
+    background-color: #602cc8;
     padding: 10px;
     color: white;
     font-size: 20px;
@@ -23,7 +26,7 @@ body {
 
   .pokemon-image {
     max-width: 100%;
-    height: auto;
+    height: 200px;
   }
 
   .pokemon-name {
@@ -31,13 +34,14 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
+    font-family: "Silkscreen", sans-serif;
   }
 
   .pokedex-button {
   background-color: #ff6f61; /* Color de fondo */
   color: white; /* Color del texto */
   border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
+  padding: 5px 10px; /* Espaciado interno */
   border-radius: 5px; /* Esquinas redondeadas */
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
