@@ -6,38 +6,56 @@ const path = require('path');
 const bodyParser = require('body-parser');
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // Set views directory
-app.use(bodyParser.urlencoded({ extended: true })); // Parse form data from search
-
+var a= `https://pokeapi.co/api/v2/pokemon`;
+var resultados=null;
+app.engine("ejs",require("ejs").renderFile);
+app.set("view engine", "ejs");
+app.set("views","./views");
 const PORT = process.env.PORT || 3000;
 let currentPokemonId = 1; // Empezamos en el Pokémon con ID 1
 
+
 //endpoint  para obtener el siguiente Pokémon
 app.get('/', async (req, res) => {
-    var response;
+   
     try{
-        response = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
-        console.log("res:",response.data.results);
+        if(resultados===null){
+            resultados = await axios.get(a);
+        } res.render("index",{
+            Pokedex: resultados.data.results,
+            next: resultados.data.next,
+            prev: resultados.data.prev,
+            currentPokemonId: currentPokemonId,
+            imagen:""
+        });
     } catch(error){
         console.error(error);
         res.status(500).json({ error: "Error en los datos de la Pokedex"});
     }
-    res.render('index',{Pokedex:response.data.results,next:response.data.next});
 });
 
 //endpoint devuelve los siguientes 20 pokemons
-app.get('/pokemon/:url2', async (req,res)=>{
-    const {url2} = req.params;
+app.get('/pokemon/:b', async (req,res)=>{
+    const {b} = req.params;
     try{
-    url =url2;
-        response = await axios.get(url);
-        console.log("res:",response);
-    } catch(error){
-        console.error(error);
-        res.status(500).json({ error: "Error en los datos de la Pokedex"});
+    a=b;
+        resultados = await axios.get(a);
+        res.redirect("/");
+    } catch{
+        res.status(404).send({ error: "Error en los datos de la Pokedex"});
     }
-    res.render('index',{Pokedex:response.data.results,next:response.data.next});
+});
+
+// endpoint para obtener imagenes
+app.get("/pokemon/response/:image",async(req,res)=>{
+    const {image} = req.params;
+    try{const POKEimage = await axios.get(image);
+    console.log("props:  ", POKEimage.data);
+    res.json({link:POKEimage.data.sprites.front_default});}
+    catch{
+        res.status(404).send({ error: "Error en los datos de la Pokedex"});
+    }
+
 });
 
 // Endpoint para buscar un Pokémon por nombre
